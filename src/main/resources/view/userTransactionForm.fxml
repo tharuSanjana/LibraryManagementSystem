@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="800.0" prefWidth="1238.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserTransactionFormController">
+   <children>
+      <TableView fx:id="tblTr" layoutX="127.0" layoutY="171.0" prefHeight="546.0" prefWidth="954.0" style="-fx-border-color: #5D3587;">
+        <columns>
+          <TableColumn fx:id="colTransId" prefWidth="123.19998168945312" text="Transaction ID" />
+            <TableColumn fx:id="colBookId" prefWidth="125.59996032714844" text="Book ID" />
+            <TableColumn fx:id="colBookName" prefWidth="142.39996337890625" text="Book Name" />
+            <TableColumn fx:id="colBorrowDate" prefWidth="132.0" text="Borrow Date" />
+            <TableColumn fx:id="colReturnDate" prefWidth="136.0" text="Return Date" />
+            <TableColumn fx:id="colReceiveDate" prefWidth="144.0" text="Receive Date" />
+            <TableColumn fx:id="colReturnStatus" prefWidth="148.80002441406248" text="Return(yes/no)" />
+        </columns>
+      </TableView>
+      <Label layoutX="464.0" layoutY="67.0" prefHeight="50.0" prefWidth="314.0" text="TRANSACTION HISTORY">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="79.0" fitWidth="51.0" layoutX="36.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/arrowKey.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="27.0" layoutY="40.0" mnemonicParsing="false" onAction="#backBtnOnAction" opacity="0.04" prefHeight="34.0" prefWidth="69.0" text="Button" />
+      <TextField layoutX="904.0" layoutY="92.0" prefHeight="34.0" prefWidth="178.0" />
+      <Button layoutX="1108.0" layoutY="97.0" mnemonicParsing="false" text="Ok" />
+   </children>
+</AnchorPane>

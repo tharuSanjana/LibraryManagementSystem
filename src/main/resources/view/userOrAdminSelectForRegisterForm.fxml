@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="238.0" prefWidth="567.0" style="-fx-background-radius: 50; -fx-background-color: #A367B1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserOrAdminSelectForRegisterFormController">
+   <children>
+      <CheckBox fx:id="checkBoxAdmin" layoutX="102.0" layoutY="89.0" mnemonicParsing="false" onAction="#adminCheckBoxOnAction" prefHeight="38.0" prefWidth="94.0" text="ADMIN">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></CheckBox>
+      <CheckBox fx:id="checkBoxUser" layoutX="320.0" layoutY="89.0" mnemonicParsing="false" onAction="#userCheckBoxOnAction" prefHeight="38.0" prefWidth="94.0" text="USER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>

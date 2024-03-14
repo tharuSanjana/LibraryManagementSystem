@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="800.0" prefWidth="1540.0" style="-fx-background-color: #392467;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserDashboardFormController">
+   <children>
+      <AnchorPane fx:id="rootForm" layoutX="299.0" prefHeight="807.0" prefWidth="1238.0" style="-fx-background-color: #FBF9F1;">
+         <children>
+            <Label layoutX="297.0" layoutY="82.0" prefHeight="58.0" prefWidth="292.0" text="WELCOME ">
+               <font>
+                  <Font name="System Bold" size="51.0" />
+               </font>
+            </Label>
+            <TextField layoutX="301.0" layoutY="245.0" prefHeight="46.0" prefWidth="124.0" style="-fx-background-radius: 5;" />
+            <Label layoutX="95.0" layoutY="253.0" prefHeight="46.0" prefWidth="198.0" text="Total Books">
+               <font>
+                  <Font name="System Bold Italic" size="31.0" />
+               </font>
+            </Label>
+            <Button layoutX="1014.0" layoutY="82.0" mnemonicParsing="false" onAction="#returnBookBtnOnAction" prefHeight="34.0" prefWidth="140.0" text="Return Book">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+      <Button fx:id="bookBtn" layoutX="-2.0" layoutY="319.0" mnemonicParsing="false" onAction="#booksBtnONAction" prefHeight="52.0" prefWidth="299.0" style="-fx-background-color: #392467;" text="BOOKS" textFill="#f7f4f4">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="transactionBtn" layoutY="401.0" mnemonicParsing="false" onAction="#transBtnOnAction" prefHeight="52.0" prefWidth="299.0" style="-fx-background-color: #392467;" text="TRANSACTION" textFill="#f7f4f4">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button layoutY="488.0" mnemonicParsing="false" onAction="#profileBtnOnAction" prefHeight="52.0" prefWidth="299.0" style="-fx-background-color: #392467;" text="PROFILE" textFill="#f7f4f4">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="94.0" layoutY="602.0" mnemonicParsing="false" onAction="#logOutBtnOnAction" prefHeight="46.0" prefWidth="108.0" style="-fx-background-radius: 20;" text="Log Out">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
