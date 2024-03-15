@@ -1,11 +1,12 @@
 package org.example.dao.custom;
 
+import org.example.CrudDao;
 import org.example.entity.UserBook;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public interface TransactionDao {
+public interface TransactionDao extends CrudDao<UserBook> {
     String generateTransId();
 
     boolean saveUserBook(String transId, String isReturn, LocalDate reserveDate, LocalDate borrowDate, LocalDate returnDate, String userId, String bookId);

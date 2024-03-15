@@ -92,6 +92,26 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public boolean delete(String id) {
+        return false;
+    }
+
+    @Override
+    public String getGenerateId() {
+        return null;
+    }
+
+    @Override
+    public List<String> getCmbId() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<User> getAll() {
+        return null;
+    }
+
+    @Override
     public String getGenerateUserId() {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();

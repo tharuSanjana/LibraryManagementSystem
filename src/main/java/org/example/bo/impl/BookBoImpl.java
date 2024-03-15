@@ -1,5 +1,6 @@
 package org.example.bo.impl;
 
+import org.example.DAOFactory;
 import org.example.bo.custom.BookBo;
 import org.example.config.FactoryConfiguration;
 import org.example.dao.custom.BookDao;
@@ -18,7 +19,8 @@ import java.util.ArrayList;
 
 public class BookBoImpl implements BookBo {
 
-    BookDao bookDao =  new BookDaoImpl();
+    //BookDao bookDao =  new BookDaoImpl();
+    BookDao bookDao = (BookDao) DAOFactory.daoFactory().getDAOTypes(DAOFactory.DAOTypes.BOOK);
     UserDao userDao = new UserDaoImpl();
 
     TransactionDao transactionDao = new TransactionDaoImpl();

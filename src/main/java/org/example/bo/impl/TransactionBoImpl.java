@@ -1,5 +1,6 @@
 package org.example.bo.impl;
 
+import org.example.DAOFactory;
 import org.example.bo.custom.TransactionBo;
 import org.example.dao.custom.TransactionDao;
 import org.example.dao.impl.TransactionDaoImpl;
@@ -10,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TransactionBoImpl implements TransactionBo {
-    TransactionDao transactionDao = new TransactionDaoImpl();
+   // TransactionDao transactionDao = new TransactionDaoImpl();
+    TransactionDao transactionDao = (TransactionDao) DAOFactory.daoFactory().getDAOTypes(DAOFactory.DAOTypes.USERBOOK);
     @Override
     public String generateTransId() {
         return transactionDao.generateTransId();

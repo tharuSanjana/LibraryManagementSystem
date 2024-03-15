@@ -13,9 +13,6 @@ public class QueryDao {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-       /* String hql = "SELECT new org.example.dto.TransactionDto(ub.id, ub.user, ub.book, ub.returnDate, ub.reserveDate, ub.borrowDate)" +
-                " FROM UserBook ub" +
-                " INNER JOIN User u ON ub.user.id = u.name";*/
         String hql = "SELECT new org.example.dto.TransactionDto(ub.id,u,b, ub.returnDate, ub.reserveDate, ub.borrowDate)" +
                 " FROM UserBook ub" +
                 " INNER JOIN ub.user u" +

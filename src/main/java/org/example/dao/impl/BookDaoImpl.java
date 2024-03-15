@@ -75,6 +75,26 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
+    public boolean delete(String id) {
+        return false;
+    }
+
+    @Override
+    public String getGenerateId() {
+        return null;
+    }
+
+    @Override
+    public List<String> getCmbId() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Book> getAll() {
+        return null;
+    }
+
+    @Override
     public ArrayList<Book> getAllBooks() {
 
         Session session = FactoryConfiguration.getInstance().getSession();

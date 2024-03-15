@@ -1,11 +1,12 @@
 package org.example.dao.custom;
 
+import org.example.CrudDao;
 import org.example.dto.UserDto;
 import org.example.entity.User;
 
 import java.util.ArrayList;
 
-public interface UserDao {
+public interface UserDao extends CrudDao<User> {
     ArrayList<String> getCmbBranchId();
     boolean save(User user);
     String getGenerateUserId();

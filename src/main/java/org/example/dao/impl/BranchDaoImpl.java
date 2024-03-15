@@ -176,4 +176,29 @@ public class BranchDaoImpl implements BranchDao {
         }
         return "BR001";
     }
+
+    @Override
+    public boolean save(Branch dto) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String id) {
+        return false;
+    }
+
+    @Override
+    public String getGenerateId() {
+        return null;
+    }
+
+    @Override
+    public List<String> getCmbId() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Branch> getAll() {
+        return null;
+    }
 }

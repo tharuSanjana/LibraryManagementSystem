@@ -1,5 +1,6 @@
 package org.example.bo.impl;
 
+import org.example.DAOFactory;
 import org.example.bo.custom.AdminBo;
 import org.example.dao.custom.AdminDao;
 import org.example.dao.impl.AdminDaoImpl;
@@ -10,7 +11,8 @@ import java.util.ArrayList;
 
 public class AdminBoImpl implements AdminBo {
 
-AdminDao adminDao =  new AdminDaoImpl();
+//AdminDao adminDao =  new AdminDaoImpl();
+    AdminDao adminDao = (AdminDao) DAOFactory.daoFactory().getDAOTypes(DAOFactory.DAOTypes.ADMIN);
     @Override
     public boolean saveAdmin(AdminDto adminDto) {
         return adminDao.saveAdmin(new Admin(adminDto.getId(),adminDto.getName(),adminDto.getEmail(),adminDto.getBranch(),adminDto.getUsername(),adminDto.getPassword()));

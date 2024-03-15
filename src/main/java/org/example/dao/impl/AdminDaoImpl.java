@@ -178,4 +178,29 @@ public class AdminDaoImpl implements AdminDao {
         }
         return "A001";
     }
+
+    @Override
+    public boolean save(Admin dto) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String id) {
+        return false;
+    }
+
+    @Override
+    public String getGenerateId() {
+        return null;
+    }
+
+    @Override
+    public List<String> getCmbId() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Admin> getAll() {
+        return null;
+    }
 }
