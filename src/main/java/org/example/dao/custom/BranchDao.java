@@ -15,7 +15,7 @@ public interface BranchDao extends CrudDao<Branch> {
 
     boolean updateBranch(Branch branch);
 
-    boolean deleteBranch(Branch branch);
+   // boolean deleteBranch(Branch branch);
 
     boolean deleteBranchBranch(String id);
 }

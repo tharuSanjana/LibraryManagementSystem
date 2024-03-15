@@ -59,7 +59,7 @@ public class BranchBoImpl implements BranchBo {
         return branchDao.updateBranch(new Branch(dto.getId(),dto.getLocation()));
     }
 
-    @Override
+  /*  @Override
     public boolean deleteBranch(BranchDto dto) {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
@@ -79,5 +79,5 @@ public class BranchBoImpl implements BranchBo {
            }
        }
        return true;
-    }
+    }*/
 }

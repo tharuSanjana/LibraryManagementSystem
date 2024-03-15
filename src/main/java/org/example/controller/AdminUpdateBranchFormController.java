@@ -15,6 +15,7 @@ import org.example.bo.impl.UserBoImpl;
 import org.example.dto.BranchDto;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class AdminUpdateBranchFormController {
     @FXML
@@ -39,19 +40,22 @@ public class AdminUpdateBranchFormController {
     }
 
     public void okBtnOnAction(ActionEvent actionEvent) {
-        String id = cmbBranchId.getValue();
-        String location = txtLocation.getText();
+        if(validBranch()){
+            String id = cmbBranchId.getValue();
+            String location = txtLocation.getText();
 
-        var dto = new BranchDto(id,location);
-       boolean flag =  branchBo.updateBranch(dto);
-       boolean isDeleted = branchBo.deleteBranch(dto);
-        if (flag) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Branch Updated!").show();
-            clearFields();
-        }else  if (isDeleted) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Branch Deleted!").show();
-            clearFields();
+            var dto = new BranchDto(id,location);
+            boolean flag =  branchBo.updateBranch(dto);
+           // boolean isDeleted = branchBo.deleteBranch(dto);
+            if (flag) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Branch Updated!").show();
+                clearFields();
+            }/*else  if (isDeleted) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Branch Deleted!").show();
+                clearFields();
+            }*/
         }
+
     }
 
     private void clearFields() {
@@ -64,5 +68,19 @@ public class AdminUpdateBranchFormController {
         ObservableList<String> observableList = FXCollections.observableArrayList(id);
         cmbBranchId.setItems(observableList);
 
+    }
+    private boolean validBranch() {
+
+        String location = txtLocation.getText();
+        boolean isTitleValid = Pattern.matches("[A-Za-z]{4,}", location);
+        if (!isTitleValid) {
+            new Alert(Alert.AlertType.ERROR, "Invalid location").show();
+            return false;
+        }
+
+
+
+
+        return true;
     }
 }

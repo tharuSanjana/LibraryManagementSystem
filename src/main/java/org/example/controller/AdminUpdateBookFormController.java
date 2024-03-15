@@ -12,6 +12,7 @@ import org.example.dto.BookDto;
 import org.example.entity.Branch;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class AdminUpdateBookFormController {
     @FXML
@@ -37,27 +38,30 @@ public class AdminUpdateBookFormController {
     }
 
     public void oKBtnOnAction(javafx.event.ActionEvent actionEvent) {
-        String id = cbBookId.getValue();
-        String title = txtTitle.getText();
-        String author = txtAuthor.getText();
-        String genre = txtGenre.getText();
-        String branchId = txtBranchId.getText();
+        if (validBooks()){
+            String id = cbBookId.getValue();
+            String title = txtTitle.getText();
+            String author = txtAuthor.getText();
+            String genre = txtGenre.getText();
+            String branchId = txtBranchId.getText();
 
-        Branch branch1  = new Branch();
-        branch1.setId(branchId);
-        var dto = new BookDto(id,title,author,genre,branch1);
-        boolean flag = bookBo.updateBook(dto);
-        boolean isDeleted = bookBo.deleteBook(dto);
+            Branch branch1  = new Branch();
+            branch1.setId(branchId);
+            var dto = new BookDto(id,title,author,genre,branch1);
+            boolean flag = bookBo.updateBook(dto);
+            boolean isDeleted = bookBo.deleteBook(dto);
 
-        if (flag) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Book Updated!").show();
-            clearFields();
+            if (flag) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Book Updated!").show();
+                clearFields();
+            }
+
+            if (isDeleted) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Book Deleted!").show();
+                clearFields();
+            }
         }
 
-        if (isDeleted) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Book Deleted!").show();
-            clearFields();
-        }
 
     }
 
@@ -85,6 +89,29 @@ public class AdminUpdateBookFormController {
         txtGenre.setText(bookDto.getGenre());
         txtBranchId.setText(bookDto.getBranch().getId());
     }
+    private boolean validBooks() {
 
+        String title = txtTitle.getText();
+        boolean isTitleValid = Pattern.matches("[A-Za-z]{4,}", title);
+        if (!isTitleValid) {
+            new Alert(Alert.AlertType.ERROR, "Invalid book title").show();
+            return false;
+        }
+        String author = txtAuthor.getText();
+        boolean isAuthorValid = Pattern.matches("[A-Za-z]{4,}",author);
+        if (!isAuthorValid) {
+            new Alert(Alert.AlertType.ERROR, "Invalid author").show();
+            return false;
+        }
+        String genre = txtGenre.getText();
+        boolean isGenreValid = Pattern.matches("[A-Za-z]{4,}",genre);
+        if (!isGenreValid) {
+            new Alert(Alert.AlertType.ERROR, "Invalid genre").show();
+            return false;
+        }
+
+
+        return true;
+    }
 
 }

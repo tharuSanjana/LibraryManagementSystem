@@ -20,6 +20,7 @@ import org.example.entity.Branch;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class AdminRegistrationFormController {
     @FXML
@@ -61,23 +62,26 @@ public class AdminRegistrationFormController {
 
 
     public void saveBtnOnAction(javafx.event.ActionEvent actionEvent) {
-        String id = lblId.getText();
-        String name = txtName.getText();
-        String email = txtEmail.getText();
-        String branchId = cmbBranch.getValue();
-        String userName = txtUserName.getText();
-        String password = txtPassword.getText();
+        if (validAdmin()) {
+            String id = lblId.getText();
+            String name = txtName.getText();
+            String email = txtEmail.getText();
+            String branchId = cmbBranch.getValue();
+            String userName = txtUserName.getText();
+            String password = txtPassword.getText();
 
-        Branch branch = new Branch();
-        branch.setId(branchId);
-        var dto = new AdminDto(id,name,email,branch,userName,password);
+            Branch branch = new Branch();
+            branch.setId(branchId);
+            var dto = new AdminDto(id,name,email,branch,userName,password);
 
-        boolean flag = adminBo.saveAdmin(dto);
+            boolean flag = adminBo.saveAdmin(dto);
 
-        if(flag){
-            new Alert(Alert.AlertType.CONFIRMATION, "Admin saved!").show();
-            clearFields();
+            if(flag){
+                new Alert(Alert.AlertType.CONFIRMATION, "Admin saved!").show();
+                clearFields();
+            }
         }
+
     }
     private void clearFields() {
         lblId.setText("");
@@ -102,5 +106,23 @@ public class AdminRegistrationFormController {
         ArrayList<String> id =  adminBo.getCmbBranchId();
         ObservableList<String> strings = FXCollections.observableArrayList(id);
         cmbBranch.setItems(strings);
+    }
+
+    private boolean validAdmin() {
+        String id = lblId.getText();
+        boolean isIdValid = Pattern.matches("[A][0-9]{3,}", id);
+        if (!isIdValid) {
+            new Alert(Alert.AlertType.ERROR, "Invalid admin id").show();
+            return false;
+        }
+        String name = txtName.getText();
+        boolean isNameValid = Pattern.matches("[A-Za-z]{4,}", name);
+        if (!isNameValid) {
+            new Alert(Alert.AlertType.ERROR, "Invalid name").show();
+            return false;
+        }
+
+
+        return true;
     }
 }

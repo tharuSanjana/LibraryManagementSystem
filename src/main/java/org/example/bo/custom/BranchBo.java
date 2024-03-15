@@ -14,5 +14,5 @@ public interface BranchBo extends SuperBO {
 
    boolean updateBranch(BranchDto dto);
 
-   boolean deleteBranch(BranchDto dto);
+  // boolean deleteBranch(BranchDto dto);
 }

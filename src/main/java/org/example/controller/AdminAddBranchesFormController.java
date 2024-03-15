@@ -13,6 +13,8 @@ import org.example.bo.custom.BranchBo;
 import org.example.bo.impl.BranchBoImpl;
 import org.example.dto.BranchDto;
 
+import java.util.regex.Pattern;
+
 
 public class AdminAddBranchesFormController {
     @FXML
@@ -55,16 +57,19 @@ public class AdminAddBranchesFormController {
 
     @FXML
     void saveBtnOnAction(ActionEvent event) {
-        String id = lblId.getText();
-        String location = txtLocation.getText();
+       if(validBranch()){
+           String id = lblId.getText();
+           String location = txtLocation.getText();
 
-        var dto = new BranchDto(id,location);
-        boolean flag = branchBo.saveBranch(dto);
+           var dto = new BranchDto(id,location);
+           boolean flag = branchBo.saveBranch(dto);
 
-        if(flag){
-            new Alert(Alert.AlertType.CONFIRMATION, "Branch saved!").show();
-            clearFields();
-        }
+           if(flag){
+               new Alert(Alert.AlertType.CONFIRMATION, "Branch saved!").show();
+               clearFields();
+           }
+       }
+
     }
     private void clearFields() {
         lblId.setText("");
@@ -78,5 +83,19 @@ public class AdminAddBranchesFormController {
         return branchId;
     }
 
+    private boolean validBranch() {
+
+        String location = txtLocation.getText();
+        boolean isTitleValid = Pattern.matches("[A-Za-z]{4,}", location);
+        if (!isTitleValid) {
+            new Alert(Alert.AlertType.ERROR, "Invalid location").show();
+            return false;
+        }
+
+
+
+
+        return true;
+    }
 
 }

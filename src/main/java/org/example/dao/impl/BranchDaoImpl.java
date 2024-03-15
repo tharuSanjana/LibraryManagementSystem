@@ -101,9 +101,9 @@ public class BranchDaoImpl implements BranchDao {
         return rowsUpdated > 0;
     }
 
-    @Override
+    /*@Override
     public boolean deleteBranch(Branch branch) {
-       /* Session session = FactoryConfiguration.getInstance().getSession();
+       *//* Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
         try {
             // Delete associated books first
@@ -134,9 +134,9 @@ public class BranchDaoImpl implements BranchDao {
             return false;
         } finally {
             session.close();
-        }*/
+        }*//*
         return  false;
-    }
+    }*/
 
     @Override
     public boolean deleteBranchBranch(String id) {

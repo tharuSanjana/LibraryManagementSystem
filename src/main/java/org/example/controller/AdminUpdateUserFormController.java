@@ -14,6 +14,7 @@ import org.example.dto.UserDto;
 import org.example.entity.Branch;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class AdminUpdateUserFormController {
     @FXML
@@ -43,26 +44,29 @@ public class AdminUpdateUserFormController {
     }
 
     public void okBtnOnAction(ActionEvent actionEvent) {
-        String id = cmbUserId.getValue();
-        String name = txtName.getText();
-        String email = txtEmail.getText();
-        String branchId = txtBranch.getText();
+        if (validUser()){
+            String id = cmbUserId.getValue();
+            String name = txtName.getText();
+            String email = txtEmail.getText();
+            String branchId = txtBranch.getText();
 
-        Branch branch = new Branch();
-        branch.setId(branchId);
+            Branch branch = new Branch();
+            branch.setId(branchId);
 
-        var dto = new UserDto(id,name,email,branch);
-        boolean flag = userBo.updateUser(dto);
-        boolean isDeleted = userBo.deleteUser(dto);
-        if (flag) {
-            new Alert(Alert.AlertType.CONFIRMATION, "User Updated!").show();
-            clearFields();
+            var dto = new UserDto(id,name,email,branch);
+            boolean flag = userBo.updateUser(dto);
+            boolean isDeleted = userBo.deleteUser(dto);
+            if (flag) {
+                new Alert(Alert.AlertType.CONFIRMATION, "User Updated!").show();
+                clearFields();
+            }
+
+            else if (isDeleted) {
+                new Alert(Alert.AlertType.CONFIRMATION, "User Deleted!").show();
+                clearFields();
+            }
         }
 
-        else if (isDeleted) {
-            new Alert(Alert.AlertType.CONFIRMATION, "User Deleted!").show();
-            clearFields();
-        }
     }
 
     public void populateCmbBox(){
@@ -77,6 +81,20 @@ public class AdminUpdateUserFormController {
         txtEmail.setText("");
         txtBranch.setText("");
 
+    }
 
+    private boolean validUser() {
+
+        String name = txtName.getText();
+        boolean isTitleValid = Pattern.matches("[A-Za-z]{4,}", name);
+        if (!isTitleValid) {
+            new Alert(Alert.AlertType.ERROR, "Invalid name").show();
+            return false;
+        }
+
+
+
+
+        return true;
     }
 }

@@ -326,39 +326,7 @@ public class BookDaoImpl implements BookDao {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-       /* String hql = "FROM Book b WHERE b.title = :bookName";
-        Query query = session.createQuery(hql);
-        query.setParameter("bookName", bookName);
 
-        ArrayList<BookDto> result = (ArrayList<BookDto>) ((org.hibernate.query.Query<?>) query).list();
-
-        transaction.commit();
-        session.close();
-
-        return result;*/
-
-      /*  String hql = "FROM Book b WHERE b.title = :bookName";
-        Query query = session.createQuery(hql);
-        query.setParameter("bookName", bookName);
-
-        List<Book> books = (List<Book>) ((org.hibernate.query.Query<?>) query).list();
-        ArrayList<BookDto> result = new ArrayList<>();
-
-        for (Book book : books) {
-            BookDto dto = new BookDto();
-
-            dto.setId(book.getId());
-            dto.setTitle(book.getTitle());
-            dto.setAuthor(book.getAuthor());
-            dto.setGenre(book.getGenre());
-
-            result.add(dto);
-        }
-
-        transaction.commit();
-        session.close();
-
-        return result;*/
 
         String hql = "SELECT b.id, b.title, b.author, b.genre FROM Book b WHERE b.title = :bookName";
         Query query = session.createQuery(hql);
