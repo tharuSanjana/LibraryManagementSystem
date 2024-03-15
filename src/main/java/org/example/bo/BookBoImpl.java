@@ -108,5 +108,10 @@ public class BookBoImpl implements BookBo{
 
     }
 
+    @Override
+    public ArrayList<BookDto> searchBookName(String bookName) {
+        return bookDao.searchBookName(bookName);
+    }
+
 
 }

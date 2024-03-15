@@ -56,7 +56,7 @@ public class AdminDashboardFormController {
 
     @FXML
     void addUsersBtnOnAction(ActionEvent event) throws IOException {
-        URL resource = this.getClass().getResource("/view/adminAddUserForm.fxml");
+        URL resource = this.getClass().getResource("/view/userRegiForm.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
         Parent load = fxmlLoader.load();
         Stage stage = new Stage();

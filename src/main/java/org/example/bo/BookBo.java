@@ -22,5 +22,5 @@ public interface BookBo {
 
     String getUsername(String id);
 
-    // ArrayList<BookDto> searchBookName(String bookName);
+     ArrayList<BookDto> searchBookName(String bookName);
 }

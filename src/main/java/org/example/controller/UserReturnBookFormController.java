@@ -90,6 +90,7 @@ public class UserReturnBookFormController {
         LocalDate returnDate = null;
         String isReturn = "yes";
         LocalDate reserveDate = LocalDate.now();
+        //LocalDate reserveDate = LocalDate.parse("2024-03-15");
 
         var dto = new ReturnDto(userId,bookId,bookName,availability,borrowDate,returnDate,isReturn,reserveDate);
         boolean flag = userBo.returnBook(dto);

@@ -27,7 +27,7 @@
             <TableColumn fx:id="colBranch" prefWidth="136.00001525878906" text="Branch" />
          </columns>
       </TableView>
-      <TextField fx:id="txtBook" layoutX="944.0" layoutY="35.0" prefHeight="34.0" prefWidth="214.0" />
+      <TextField fx:id="txtSearchBook" layoutX="944.0" layoutY="35.0" prefHeight="34.0" prefWidth="214.0" />
       <AnchorPane layoutX="815.0" layoutY="262.0" prefHeight="457.0" prefWidth="386.0" style="-fx-background-color: #5D3587; -fx-background-radius: 20;">
          <children>
             <Label layoutX="98.0" layoutY="34.0" prefHeight="43.0" prefWidth="214.0" text="For Borrowing" textFill="#f2eaea">

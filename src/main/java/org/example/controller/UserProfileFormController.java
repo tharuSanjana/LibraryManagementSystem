@@ -66,7 +66,7 @@ public class UserProfileFormController {
     }
 
 
-   
+
     public  void setUserDetails(){
         GetUserIdDto getUserIdDto = new GetUserIdDto();
         String id = getUserIdDto.getId();

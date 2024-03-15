@@ -17,6 +17,7 @@ import org.example.bo.BookBoImpl;
 import org.example.dto.BookDto;
 import org.example.dto.BorrowDto;
 import org.example.dto.GetUserIdDto;
+import org.example.dto.SearchBookDto;
 import org.example.dto.tm.BookTm;
 import org.example.entity.Branch;
 
@@ -60,7 +61,7 @@ public class UserBooksFormController {
     @FXML
     private TextField txtUsername;
     @FXML
-    private TextField txtBook;
+    private TextField txtSearchBook;
 
     BookBo bookBo = new BookBoImpl();
     private ObservableList<BookTm> obList = FXCollections.observableArrayList();
@@ -82,11 +83,15 @@ public class UserBooksFormController {
     }
 
     public void searchBtnOnAction(ActionEvent actionEvent) throws IOException {
-        String bookName = txtBook.getText();
+        String bookName = txtSearchBook.getText();
         /*BookDto bookDto = bookBo.searchBookName(bookName);
         System.out.println(bookDto);*/
+       /* System.out.println(bookName);
         UserSearchBookFormController userSearchBookFormController = new UserSearchBookFormController();
-        userSearchBookFormController.initialize(bookName);
+        userSearchBookFormController.searchBookDetails(bookName);
+        System.out.println(bookName);*/
+        SearchBookDto searchBook = new SearchBookDto();
+        searchBook.setBookName(bookName);
 
         URL resource = this.getClass().getResource("/view/userSearchBookForm.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
@@ -155,7 +160,9 @@ public class UserBooksFormController {
         String bookName = txtBookName.getText();
         String availability = "no";
         LocalDate currentDate = LocalDate.now();
+        //LocalDate currentDate = LocalDate.parse("2024-03-01");
         LocalDate returnDate = currentDate.plusDays(8);
+       // LocalDate returnDate = LocalDate.parse("2024-03-09");
         String isReturn = "no";
         LocalDate reserveDate = null;
 
@@ -177,4 +184,6 @@ public class UserBooksFormController {
         String name = bookBo.getUsername(id);
         txtUsername.setText(name);
     }
+
+
 }

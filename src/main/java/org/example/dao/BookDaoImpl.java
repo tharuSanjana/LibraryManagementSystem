@@ -300,6 +300,68 @@ public class BookDaoImpl implements BookDao{
         return username;
     }
 
+    @Override
+    public ArrayList<BookDto> searchBookName(String bookName) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+       /* String hql = "FROM Book b WHERE b.title = :bookName";
+        Query query = session.createQuery(hql);
+        query.setParameter("bookName", bookName);
+
+        ArrayList<BookDto> result = (ArrayList<BookDto>) ((org.hibernate.query.Query<?>) query).list();
+
+        transaction.commit();
+        session.close();
+
+        return result;*/
+
+      /*  String hql = "FROM Book b WHERE b.title = :bookName";
+        Query query = session.createQuery(hql);
+        query.setParameter("bookName", bookName);
+
+        List<Book> books = (List<Book>) ((org.hibernate.query.Query<?>) query).list();
+        ArrayList<BookDto> result = new ArrayList<>();
+
+        for (Book book : books) {
+            BookDto dto = new BookDto();
+
+            dto.setId(book.getId());
+            dto.setTitle(book.getTitle());
+            dto.setAuthor(book.getAuthor());
+            dto.setGenre(book.getGenre());
+
+            result.add(dto);
+        }
+
+        transaction.commit();
+        session.close();
+
+        return result;*/
+
+        String hql = "SELECT b.id, b.title, b.author, b.genre FROM Book b WHERE b.title = :bookName";
+        Query query = session.createQuery(hql);
+        query.setParameter("bookName", bookName);
+
+        List<Object[]> rows = (List<Object[]>) ((org.hibernate.query.Query<?>) query).list();
+        ArrayList<BookDto> result = new ArrayList<>();
+
+        for (Object[] row : rows) {
+            BookDto dto = new BookDto();
+            dto.setId((String) row[0]);
+            dto.setTitle((String) row[1]);
+            dto.setAuthor((String) row[2]);
+            dto.setGenre((String) row[3]);
+
+            result.add(dto);
+        }
+
+        transaction.commit();
+        session.close();
+
+        return result;
+    }
+
 
     private String splitBookId(String currentBookId) {
 

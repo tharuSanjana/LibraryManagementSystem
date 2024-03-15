@@ -1,13 +1,17 @@
 package org.example.controller;
 
+import com.sun.javafx.menu.MenuItemBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import org.example.bo.AdminBo;
 import org.example.bo.AdminBoImpl;
@@ -36,6 +40,8 @@ public class LoginFormController {
 
     @FXML
     private TextField txtUsername;
+    @FXML
+    private Button visibleBtn;
 
     AdminDto adminDto = new AdminDto();
     AdminBo adminBo = new AdminBoImpl();
@@ -44,6 +50,10 @@ public class LoginFormController {
     UserBo userBo = new UserBoImpl();
     private UserDto loggedInUser;
 
+    public void initialize() {
+        // Set the font of the password field to a monospace font
+        txtPassword.setFont(Font.font("Monospaced")); // You can replace "Monospaced" with any monospace font
+    }
     @FXML
     void createAccBtnOnAction(ActionEvent event) throws IOException {
         AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/userOrAdminSelectForRegisterForm.fxml"));
@@ -105,7 +115,17 @@ public class LoginFormController {
         }
         //GetUserIdDto.setId(userId);
     }
-}
+
+    @FXML
+    void visibleBtnOnAction(ActionEvent event) {
+        txtPassword.setManaged(visibleBtn.isPressed());
+        txtPassword.setVisible(visibleBtn.isPressed());
+        txtPassword.setDisable(visibleBtn.isPressed());
+        txtPassword.setMouseTransparent(visibleBtn.isPressed());
+        }
+
+    }
+
 
 
 

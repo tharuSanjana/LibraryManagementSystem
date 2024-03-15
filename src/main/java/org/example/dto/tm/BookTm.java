@@ -124,4 +124,12 @@ public class BookTm {
         this.returnDate = returnDate;
 
     }
+
+    public BookTm(String id, String title, String author, String genre) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+
+    }
 }

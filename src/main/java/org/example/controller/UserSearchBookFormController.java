@@ -12,7 +12,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.example.bo.BookBo;
 import org.example.bo.BookBoImpl;
+import org.example.dto.BookDto;
+import org.example.dto.SearchBookDto;
 import org.example.dto.tm.BookTm;
+import org.example.entity.Branch;
+
+import java.util.List;
 
 public class UserSearchBookFormController {
     @FXML
@@ -39,8 +44,8 @@ public class UserSearchBookFormController {
     private ObservableList<BookTm> obList = FXCollections.observableArrayList();
 
     public void initialize(String bookName){
-        /*setCellValueFactory();
-        loadAllSearchBook(bookName);*/
+        setCellValueFactory();
+        searchBookDetails();
     }
     @FXML
     void cancelBtnOnAction(ActionEvent event) {
@@ -64,7 +69,7 @@ public class UserSearchBookFormController {
        colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
        colAuthor.setCellValueFactory(new PropertyValueFactory<>("author"));
        colGenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
-       colBranch.setCellValueFactory(new PropertyValueFactory<>("branchId"));
+      // colBranch.setCellValueFactory(new PropertyValueFactory<>("branchId"));
     }
 
    /* public void  loadAllSearchBook(String bookName){
@@ -87,4 +92,27 @@ public class UserSearchBookFormController {
         }
         tblSearchBook.setItems(obList);
     }*/
+
+    public void searchBookDetails(){
+        SearchBookDto searchBookDto = new SearchBookDto();
+        String bookName = searchBookDto.getBookName();
+
+        List<BookDto> bookList = null;
+
+        bookList = bookBo.searchBookName(bookName);
+        for (BookDto bookDto:bookList) {
+           /* Branch branch = new Branch();
+            String branchId = branch.setId(bookDto.getBranch().getId());*/
+
+            obList.add(new BookTm(bookDto.getId(),
+                            bookDto.getTitle(),
+                            bookDto.getAuthor(),
+                            bookDto.getGenre()
+                           // branchId
+                    )
+            );
+
+        }
+        tblSearchBook.setItems(obList);
+    }
 }

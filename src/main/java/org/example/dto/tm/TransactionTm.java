@@ -14,15 +14,17 @@ public class TransactionTm{
     private LocalDate borrowDate;
     private String isReturn;
     private String userId;
+    private String userName;
 
-    private String bookId;
-    private String bookName;
-
-    public String getBookName() {
-        return bookName;
-    }
-
-    public void setBookName(String bookName) {
+    public TransactionTm(String id, LocalDate returnDate, LocalDate reserveDate, LocalDate borrowDate, String isReturn, String userId, String userName, String bookId, String bookName) {
+        this.id = id;
+        this.returnDate = returnDate;
+        this.reserveDate = reserveDate;
+        this.borrowDate = borrowDate;
+        this.isReturn = isReturn;
+        this.userId = userId;
+        this.userName = userName;
+        this.bookId = bookId;
         this.bookName = bookName;
     }
 
@@ -35,9 +37,29 @@ public class TransactionTm{
                 ", borrowDate=" + borrowDate +
                 ", isReturn='" + isReturn + '\'' +
                 ", userId='" + userId + '\'' +
+                ", userName='" + userName + '\'' +
                 ", bookId='" + bookId + '\'' +
                 ", bookName='" + bookName + '\'' +
                 '}';
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    private String bookId;
+    private String bookName;
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
     }
 
     public TransactionTm(String id, LocalDate returnDate, LocalDate reserveDate, LocalDate borrowDate, String isReturn, String userId, String bookId, String bookName) {
@@ -118,6 +140,27 @@ public class TransactionTm{
         this.reserveDate = reserveDate;
         this.isReturn = isReturn;
 
+    }
+
+   /* public TransactionTm(String id, String bookId, String userId, LocalDate borrowDate, LocalDate returnDate, LocalDate reserveDate) {
+        this.id = id;
+        this.bookId = bookId;
+        this.userId = userId;
+        this.borrowDate = borrowDate;
+        this.returnDate = returnDate;
+        this.reserveDate = reserveDate;
+
+
+    }*/
+
+    public TransactionTm(String id, String bookId, String userId, String userName, LocalDate borrowDate, LocalDate returnDate, LocalDate reserveDate) {
+        this.id = id;
+        this.returnDate = returnDate;
+        this.reserveDate = reserveDate;
+        this.borrowDate = borrowDate;
+        this.userId = userId;
+        this.userName = userName;
+        this.bookId = bookId;
     }
 
 }

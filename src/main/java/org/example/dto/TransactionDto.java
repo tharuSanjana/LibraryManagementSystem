@@ -119,4 +119,13 @@ public class TransactionDto {
         this.user = user;
 
     }
+
+    public TransactionDto(String id, User user, Book book ,LocalDate returnDate, LocalDate reserveDate , LocalDate borrowDate) {
+        this.id = id;
+        this.returnDate = returnDate;
+        this.reserveDate = reserveDate;
+        this.borrowDate = borrowDate;
+        this.user = user;
+        this.book = book;
+    }
 }

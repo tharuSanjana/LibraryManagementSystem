@@ -30,5 +30,7 @@ public interface BookDao {
     boolean deleteBookBranch(String id);
 
     String getUsername(String id);
+
+    ArrayList<BookDto> searchBookName(String bookName);
     //ArrayList<Book> searchBookName(String bookName);
 }

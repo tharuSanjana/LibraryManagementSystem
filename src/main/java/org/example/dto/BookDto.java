@@ -130,5 +130,6 @@ public class BookDto {
         this.branch = branch;
     }*/
 
+    public BookDto(){}
     }
 

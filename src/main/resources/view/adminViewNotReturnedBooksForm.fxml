@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="647.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.AdminViewNotReturnedBooksFormController">
+   <children>
+      <TableView fx:id="tblNotReturn" layoutX="33.0" layoutY="86.0" prefHeight="380.0" prefWidth="862.0">
+        <columns>
+          <TableColumn fx:id="colTranId" prefWidth="110.40001678466797" text="Transaction ID" />
+          <TableColumn fx:id="colBookId" prefWidth="121.59994506835938" text="Book ID" />
+            <TableColumn fx:id="colUserId" prefWidth="108.79998779296875" text="User ID" />
+            <TableColumn fx:id="colUsername" prefWidth="127.19998168945312" text="User Name" />
+            <TableColumn fx:id="colBorrowDate" prefWidth="128.800048828125" text="Borrow Date" />
+            <TableColumn fx:id="colReturnDate" prefWidth="121.60003662109375" text="Return Date" />
+            <TableColumn fx:id="colReceiveDate" prefWidth="140.80002441406248" text="Receive Date" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
