@@ -1,7 +1,8 @@
-package org.example.dao;
+package org.example.dao.impl;
 
 import jakarta.persistence.Query;
 import org.example.config.FactoryConfiguration;
+import org.example.dao.custom.TransactionDao;
 import org.example.entity.UserBook;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -10,7 +11,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TransactionDaoImpl implements TransactionDao{
+public class TransactionDaoImpl implements TransactionDao {
     @Override
     public String generateTransId() {
         Session session = FactoryConfiguration.getInstance().getSession();

@@ -1,7 +1,8 @@
-package org.example.dao;
+package org.example.dao.impl;
 
 import jakarta.persistence.Query;
 import org.example.config.FactoryConfiguration;
+import org.example.dao.custom.BookDao;
 import org.example.dto.BookDto;
 import org.example.dto.UserDto;
 import org.example.entity.Book;
@@ -13,7 +14,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookDaoImpl implements BookDao{
+public class BookDaoImpl implements BookDao {
     UserDto userDto = new UserDto();
     @Override
     public String getGenerateBookId() {

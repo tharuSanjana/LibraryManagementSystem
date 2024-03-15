@@ -1,15 +1,15 @@
-package org.example.bo;
+package org.example.bo.impl;
 
-import org.example.dao.TransactionDao;
-import org.example.dao.TransactionDaoImpl;
-import org.example.dto.BookDto;
+import org.example.bo.custom.TransactionBo;
+import org.example.dao.custom.TransactionDao;
+import org.example.dao.impl.TransactionDaoImpl;
 import org.example.dto.TransactionDto;
 import org.example.entity.UserBook;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TransactionBoImpl implements TransactionBo{
+public class TransactionBoImpl implements TransactionBo {
     TransactionDao transactionDao = new TransactionDaoImpl();
     @Override
     public String generateTransId() {

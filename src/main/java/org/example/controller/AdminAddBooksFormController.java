@@ -5,8 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import org.example.bo.BookBo;
-import org.example.bo.BookBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BookBo;
+import org.example.bo.impl.BookBoImpl;
 import org.example.dto.BookDto;
 import org.example.entity.Branch;
 
@@ -29,8 +30,8 @@ public class AdminAddBooksFormController {
 
     @FXML
     private TextField txtTitle;
-
-    BookBo bookBo = (BookBo) new BookBoImpl();
+    //BookBo bookBo = (BookBo) new BookBoImpl();
+   BookBo bookBo = (BookBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.BOOK);
 
     public void initialize(){
         populateCmbBox();

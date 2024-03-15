@@ -5,8 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import org.example.bo.BookBo;
-import org.example.bo.BookBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BookBo;
+import org.example.bo.impl.BookBoImpl;
 import org.example.dto.BookDto;
 import org.example.entity.Branch;
 
@@ -28,7 +29,9 @@ public class AdminUpdateBookFormController {
     @FXML
     private TextField txtTitle;
 
-    BookBo bookBo = new BookBoImpl();
+    //BookBo bookBo = new BookBoImpl();
+    BookBo bookBo = (BookBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.BOOK);
+
     public void initialize(){
         populateCmbBox();
     }

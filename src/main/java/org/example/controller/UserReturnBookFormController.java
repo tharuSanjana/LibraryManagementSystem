@@ -8,12 +8,12 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import org.example.bo.BookBo;
-import org.example.bo.BookBoImpl;
-import org.example.bo.UserBo;
-import org.example.bo.UserBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BookBo;
+import org.example.bo.impl.BookBoImpl;
+import org.example.bo.custom.UserBo;
+import org.example.bo.impl.UserBoImpl;
 import org.example.dto.*;
-import org.example.entity.User;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -30,8 +30,12 @@ public class UserReturnBookFormController {
     @FXML
     private Button cancelBtn;
 
-    UserBo userBo = new UserBoImpl();
-    BookBo bookBo = new BookBoImpl();
+   // UserBo userBo = new UserBoImpl();
+    UserBo userBo = (UserBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.USER);
+
+   // BookBo bookBo = new BookBoImpl();
+    BookBo bookBo = (BookBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.BOOK);
+
     public void initialize(){
         setUserId();
         populateCmbBox();

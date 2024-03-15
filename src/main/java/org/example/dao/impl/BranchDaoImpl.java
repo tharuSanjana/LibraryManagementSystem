@@ -1,7 +1,8 @@
-package org.example.dao;
+package org.example.dao.impl;
 
 import jakarta.persistence.Query;
 import org.example.config.FactoryConfiguration;
+import org.example.dao.custom.BranchDao;
 import org.example.dto.BranchDto;
 import org.example.entity.Branch;
 import org.hibernate.Session;

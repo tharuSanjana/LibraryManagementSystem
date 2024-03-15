@@ -1,4 +1,4 @@
-package org.example.dao;
+package org.example.dao.custom;
 
 import org.example.dto.UserDto;
 import org.example.entity.User;

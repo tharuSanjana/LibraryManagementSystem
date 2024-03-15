@@ -1,4 +1,4 @@
-package org.example.dao;
+package org.example.dao.custom;
 
 import org.example.dto.BookDto;
 import org.example.entity.Book;

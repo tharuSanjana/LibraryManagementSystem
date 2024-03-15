@@ -1,13 +1,14 @@
-package org.example.bo;
+package org.example.bo.impl;
 
-import org.example.dao.AdminDao;
-import org.example.dao.AdminDaoImpl;
+import org.example.bo.custom.AdminBo;
+import org.example.dao.custom.AdminDao;
+import org.example.dao.impl.AdminDaoImpl;
 import org.example.dto.AdminDto;
 import org.example.entity.Admin;
 
 import java.util.ArrayList;
 
-public class AdminBoImpl implements AdminBo{
+public class AdminBoImpl implements AdminBo {
 
 AdminDao adminDao =  new AdminDaoImpl();
     @Override

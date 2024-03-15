@@ -17,8 +17,10 @@ import java.util.List;
 
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import org.example.bo.TransactionBo;
-import org.example.bo.TransactionBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BookBo;
+import org.example.bo.custom.TransactionBo;
+import org.example.bo.impl.TransactionBoImpl;
 import org.example.dto.TransactionDto;
 import org.example.dto.tm.TransactionTm;
 
@@ -55,7 +57,9 @@ public class AdminTransactionFormController {
     @FXML
     private TableColumn<?, ?> colTransId;
 
-    TransactionBo transactionBo = new TransactionBoImpl();
+    //TransactionBo transactionBo = new TransactionBoImpl();
+    TransactionBo transactionBo = (TransactionBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.USERBOOK);
+
     private ObservableList<TransactionTm> obList = FXCollections.observableArrayList();
 
     public void initialize(){

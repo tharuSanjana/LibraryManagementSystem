@@ -1,7 +1,15 @@
-package org.example.bo;
+package org.example.bo.impl;
 
+import org.example.bo.custom.BranchBo;
 import org.example.config.FactoryConfiguration;
-import org.example.dao.*;
+import org.example.dao.custom.AdminDao;
+import org.example.dao.custom.BookDao;
+import org.example.dao.custom.BranchDao;
+import org.example.dao.custom.UserDao;
+import org.example.dao.impl.AdminDaoImpl;
+import org.example.dao.impl.BookDaoImpl;
+import org.example.dao.impl.BranchDaoImpl;
+import org.example.dao.impl.UserDaoImpl;
 import org.example.dto.BranchDto;
 import org.example.entity.Branch;
 import org.hibernate.Session;
@@ -9,7 +17,7 @@ import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 
-public class BranchBoImpl implements BranchBo{
+public class BranchBoImpl implements BranchBo {
     BranchDao branchDao = (BranchDao) new BranchDaoImpl();
     AdminDao adminDao = new AdminDaoImpl();
     UserDao userDao = new UserDaoImpl();

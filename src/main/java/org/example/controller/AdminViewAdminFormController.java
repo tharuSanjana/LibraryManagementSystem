@@ -11,8 +11,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.example.bo.AdminBo;
-import org.example.bo.AdminBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.AdminBo;
+import org.example.bo.custom.BookBo;
+import org.example.bo.impl.AdminBoImpl;
 import org.example.dto.AdminDto;
 import org.example.dto.tm.AdminTm;
 import org.example.entity.Branch;
@@ -43,7 +45,9 @@ public class AdminViewAdminFormController {
 
     @FXML
     private TableView<AdminTm> tblAdminView;
-    AdminBo adminBo = new AdminBoImpl();
+    //AdminBo adminBo = new AdminBoImpl();
+    AdminBo adminBo = (AdminBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.ADMIN);
+
     private ObservableList<AdminTm> obList = FXCollections.observableArrayList();
 
     @FXML

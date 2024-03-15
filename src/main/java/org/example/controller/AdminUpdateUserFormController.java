@@ -6,8 +6,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import org.example.bo.UserBo;
-import org.example.bo.UserBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BookBo;
+import org.example.bo.custom.UserBo;
+import org.example.bo.impl.UserBoImpl;
 import org.example.dto.UserDto;
 import org.example.entity.Branch;
 
@@ -26,7 +28,8 @@ public class AdminUpdateUserFormController {
     @FXML
     private TextField txtName;
 
-    UserBo userBo = new UserBoImpl();
+    //UserBo userBo = new UserBoImpl();
+    UserBo userBo = (UserBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.USER);
 
     public void initialize(){
         populateCmbBox();

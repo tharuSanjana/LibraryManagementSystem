@@ -1,9 +1,9 @@
-package org.example.dao;
+package org.example.dao.impl;
 
 import jakarta.persistence.Query;
 import org.example.config.FactoryConfiguration;
+import org.example.dao.custom.UserDao;
 import org.example.dto.UserDto;
-import org.example.entity.Book;
 import org.example.entity.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

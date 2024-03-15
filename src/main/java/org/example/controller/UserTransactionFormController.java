@@ -12,17 +12,18 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import org.example.bo.TransactionBo;
-import org.example.bo.TransactionBoImpl;
-import org.example.bo.UserBo;
-import org.example.bo.UserBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BookBo;
+import org.example.bo.custom.TransactionBo;
+import org.example.bo.impl.TransactionBoImpl;
+import org.example.bo.custom.UserBo;
+import org.example.bo.impl.UserBoImpl;
 import org.example.dto.GetUserIdDto;
 import org.example.dto.TransactionDto;
 import org.example.dto.UserDto;
 import org.example.dto.tm.TransactionTm;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserTransactionFormController {
@@ -54,7 +55,9 @@ public class UserTransactionFormController {
     @FXML
     private TableView<TransactionTm> tblTr;
 
-    TransactionBo transactionBo = (TransactionBo) new TransactionBoImpl();
+    //TransactionBo transactionBo = (TransactionBo) new TransactionBoImpl();
+    TransactionBo transactionBo = (TransactionBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.USERBOOK);
+
     UserDto userDto = new UserDto();
     UserBo userBo = new UserBoImpl();
     private ObservableList<TransactionTm> obList = FXCollections.observableArrayList();

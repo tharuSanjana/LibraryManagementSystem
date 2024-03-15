@@ -8,8 +8,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.example.bo.UserBo;
-import org.example.bo.UserBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BookBo;
+import org.example.bo.custom.UserBo;
+import org.example.bo.impl.UserBoImpl;
 import org.example.dto.GetUserIdDto;
 import org.example.dto.UserDto;
 
@@ -35,7 +37,9 @@ public class UserProfileFormController {
     @FXML
     private TextField txtBrnchd;
 
-    UserBo userBo = new UserBoImpl();
+    //UserBo userBo = new UserBoImpl();
+    UserBo userBo = (UserBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.USER);
+
 
     public void initialize(){
         setUserDetails();

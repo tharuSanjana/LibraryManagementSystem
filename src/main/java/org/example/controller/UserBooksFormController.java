@@ -12,8 +12,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import org.example.bo.BookBo;
-import org.example.bo.BookBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BookBo;
+import org.example.bo.impl.BookBoImpl;
 import org.example.dto.BookDto;
 import org.example.dto.BorrowDto;
 import org.example.dto.GetUserIdDto;
@@ -63,7 +64,9 @@ public class UserBooksFormController {
     @FXML
     private TextField txtSearchBook;
 
-    BookBo bookBo = new BookBoImpl();
+   // BookBo bookBo = new BookBoImpl();
+    BookBo bookBo = (BookBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.BOOK);
+
     private ObservableList<BookTm> obList = FXCollections.observableArrayList();
     public void initialize(){
         setCellValueFactory();

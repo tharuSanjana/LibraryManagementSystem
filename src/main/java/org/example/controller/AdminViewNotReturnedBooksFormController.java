@@ -7,9 +7,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.example.BoFactory;
 import org.example.QueryDao;
-import org.example.bo.TransactionBo;
-import org.example.bo.TransactionBoImpl;
+import org.example.bo.custom.BookBo;
+import org.example.bo.custom.TransactionBo;
+import org.example.bo.impl.TransactionBoImpl;
 import org.example.dto.TransactionDto;
 import org.example.dto.tm.TransactionTm;
 
@@ -19,7 +21,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 public class AdminViewNotReturnedBooksFormController {
 
-    TransactionBo transactionBo = new TransactionBoImpl();
+    //TransactionBo transactionBo = new TransactionBoImpl();
+    //TransactionBo transactionBo = (TransactionBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.USERBOOK);
+
     QueryDao queryDao = new QueryDao();
     @FXML
     private TableColumn<?, ?> colBookId;

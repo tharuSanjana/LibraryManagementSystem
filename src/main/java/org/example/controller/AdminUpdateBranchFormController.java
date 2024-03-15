@@ -6,10 +6,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import org.example.bo.BranchBo;
-import org.example.bo.BranchBoImpl;
-import org.example.bo.UserBo;
-import org.example.bo.UserBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BookBo;
+import org.example.bo.custom.BranchBo;
+import org.example.bo.impl.BranchBoImpl;
+import org.example.bo.custom.UserBo;
+import org.example.bo.impl.UserBoImpl;
 import org.example.dto.BranchDto;
 
 import java.util.ArrayList;
@@ -21,9 +23,13 @@ public class AdminUpdateBranchFormController {
     @FXML
     private TextField txtLocation;
 
-    UserBo userBo = new UserBoImpl();
-    BranchBo branchBo = new BranchBoImpl();
-public void initialize(){
+    //UserBo userBo = new UserBoImpl();
+    //BranchBo branchBo = new BranchBoImpl();
+    UserBo userBo = (UserBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.USER);
+    BranchBo branchBo = (BranchBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.BRANCH);
+
+
+    public void initialize(){
     populateCmbBox();
 }
     public void cmbBranchIdOnAction(ActionEvent actionEvent) {

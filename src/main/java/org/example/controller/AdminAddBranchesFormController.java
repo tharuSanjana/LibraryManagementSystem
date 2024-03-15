@@ -8,8 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.example.bo.BranchBo;
-import org.example.bo.BranchBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BranchBo;
+import org.example.bo.impl.BranchBoImpl;
 import org.example.dto.BranchDto;
 
 
@@ -26,7 +27,8 @@ public class AdminAddBranchesFormController {
     @FXML
     private TextField txtLocation;
 
-   BranchBo branchBo = new BranchBoImpl();
+   //BranchBo branchBo = new BranchBoImpl();
+   BranchBo branchBo = (BranchBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.BRANCH);
 
 
    public void initialize(){

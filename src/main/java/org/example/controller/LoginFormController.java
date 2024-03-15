@@ -1,10 +1,8 @@
 package org.example.controller;
 
-import com.sun.javafx.menu.MenuItemBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -13,12 +11,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import org.example.bo.AdminBo;
-import org.example.bo.AdminBoImpl;
-import org.example.bo.UserBo;
-import org.example.bo.UserBoImpl;
-import org.example.dao.AdminDao;
-import org.example.dao.AdminDaoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.AdminBo;
+import org.example.bo.custom.BookBo;
+import org.example.bo.impl.AdminBoImpl;
+import org.example.bo.custom.UserBo;
+import org.example.bo.impl.UserBoImpl;
+import org.example.dao.custom.AdminDao;
+import org.example.dao.impl.AdminDaoImpl;
 import org.example.dto.AdminDto;
 import org.example.dto.GetUserIdDto;
 import org.example.dto.UserDto;
@@ -44,10 +44,14 @@ public class LoginFormController {
     private Button visibleBtn;
 
     AdminDto adminDto = new AdminDto();
-    AdminBo adminBo = new AdminBoImpl();
+    //AdminBo adminBo = new AdminBoImpl();
+    AdminBo adminBo = (AdminBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.ADMIN);
+
     Admin admin = new Admin();
     AdminDao adminDao = new AdminDaoImpl();
-    UserBo userBo = new UserBoImpl();
+   // UserBo userBo = new UserBoImpl();
+    UserBo userBo = (UserBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.USER);
+
     private UserDto loggedInUser;
 
     public void initialize() {

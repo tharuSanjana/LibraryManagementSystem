@@ -1,7 +1,13 @@
-package org.example.bo;
+package org.example.bo.impl;
 
+import org.example.bo.custom.UserBo;
 import org.example.config.FactoryConfiguration;
-import org.example.dao.*;
+import org.example.dao.custom.BookDao;
+import org.example.dao.custom.TransactionDao;
+import org.example.dao.custom.UserDao;
+import org.example.dao.impl.BookDaoImpl;
+import org.example.dao.impl.TransactionDaoImpl;
+import org.example.dao.impl.UserDaoImpl;
 import org.example.dto.ReturnDto;
 import org.example.dto.UserDto;
 import org.example.entity.User;
@@ -10,7 +16,7 @@ import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 
-public class UserBoImpl implements UserBo{
+public class UserBoImpl implements UserBo {
     UserDao userDao = new UserDaoImpl();
     BookDao bookDao = new BookDaoImpl();
 

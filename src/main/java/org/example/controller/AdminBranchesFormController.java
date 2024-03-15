@@ -13,8 +13,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import org.example.bo.BranchBo;
-import org.example.bo.BranchBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BookBo;
+import org.example.bo.custom.BranchBo;
+import org.example.bo.impl.BranchBoImpl;
 import org.example.dto.BranchDto;
 import org.example.dto.tm.BranchTm;
 
@@ -40,7 +42,9 @@ public class AdminBranchesFormController {
     @FXML
     private TableView<BranchTm> tblBranches;
 
-    BranchBo branchBo = new BranchBoImpl();
+    //BranchBo branchBo = new BranchBoImpl();
+    BranchBo branchBo = (BranchBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.BRANCH);
+
     private ObservableList<BranchTm> obList = FXCollections.observableArrayList();
 
     public void initialize(){

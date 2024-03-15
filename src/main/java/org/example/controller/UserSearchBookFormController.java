@@ -10,12 +10,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import org.example.bo.BookBo;
-import org.example.bo.BookBoImpl;
+import org.example.BoFactory;
+import org.example.bo.custom.BookBo;
+import org.example.bo.impl.BookBoImpl;
 import org.example.dto.BookDto;
 import org.example.dto.SearchBookDto;
 import org.example.dto.tm.BookTm;
-import org.example.entity.Branch;
 
 import java.util.List;
 
@@ -40,7 +40,9 @@ public class UserSearchBookFormController {
     @FXML
     private TableView<BookTm> tblSearchBook;
 
-    BookBo bookBo = new BookBoImpl();
+    //BookBo bookBo = new BookBoImpl();
+    BookBo bookBo = (BookBo) BoFactory.boFactory().getBoTypes(BoFactory.BOTypes.BOOK);
+
     private ObservableList<BookTm> obList = FXCollections.observableArrayList();
 
     public void initialize(String bookName){
