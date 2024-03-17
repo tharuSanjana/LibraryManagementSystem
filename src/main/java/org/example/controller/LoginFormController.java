@@ -4,9 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
@@ -21,9 +20,11 @@ import org.example.dao.custom.AdminDao;
 import org.example.dao.impl.AdminDaoImpl;
 import org.example.dto.AdminDto;
 import org.example.dto.GetUserIdDto;
+import org.example.dto.LoginDto;
 import org.example.dto.UserDto;
 import org.example.entity.Admin;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class LoginFormController {
@@ -42,6 +43,9 @@ public class LoginFormController {
     private TextField txtUsername;
     @FXML
     private Button visibleBtn;
+    @FXML
+    private CheckBox viewPwd;
+
 
     AdminDto adminDto = new AdminDto();
     //AdminBo adminBo = new AdminBoImpl();
@@ -73,6 +77,8 @@ public class LoginFormController {
 
         String username = txtUsername.getText();
         String password = txtPassword.getText();
+        LoginDto loginDto = new LoginDto();
+        loginDto.setId(password);
 
         boolean isAdmin = checkBoxAdmin.isSelected();
         boolean isUser = checkBoxUser.isSelected();
@@ -128,7 +134,27 @@ public class LoginFormController {
         txtPassword.setMouseTransparent(visibleBtn.isPressed());
         }
 
-    }
+  /*  @FXML
+    void showPwdOnAction(ActionEvent event) {
+        LoginDto loginDto = new LoginDto();
+        String id = loginDto.getId();
+        if (viewPwd.isSelected()) {
+
+            String passwordText = txtPassword.getText();
+            txtShowPassword.setText(passwordText);
+            txtPassword.setVisible(false);
+            txtShowPassword.setVisible(true);
+        } else {
+
+            txtPassword.setVisible(true);
+            txtShowPassword.setVisible(false);
+}*/
+
+
+
+
+
+}
 
 
 
