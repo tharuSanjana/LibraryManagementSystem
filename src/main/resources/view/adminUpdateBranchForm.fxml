@@ -21,6 +21,9 @@
       </Label>
       <ComboBox fx:id="cmbBranchId" layoutX="259.0" layoutY="167.0" onAction="#cmbBranchIdOnAction" prefHeight="35.0" prefWidth="150.0" />
       <TextField fx:id="txtLocation" layoutX="260.0" layoutY="226.0" prefHeight="35.0" prefWidth="150.0" />
-      <Button layoutX="535.0" layoutY="421.0" mnemonicParsing="false" onAction="#okBtnOnAction" text="Ok" />
+      <Button layoutX="535.0" layoutY="421.0" mnemonicParsing="false" onAction="#okBtnOnAction" prefHeight="37.0" prefWidth="58.0" style="-fx-background-color: #4F75FF;" text="Ok">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
    </children>
 </AnchorPane>

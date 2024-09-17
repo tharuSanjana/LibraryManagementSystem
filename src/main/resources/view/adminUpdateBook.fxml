@@ -38,7 +38,10 @@
       <TextField fx:id="txtTitle" layoutX="202.0" layoutY="172.0" prefHeight="35.0" prefWidth="150.0" />
       <TextField fx:id="txtGenre" layoutX="201.0" layoutY="284.0" prefHeight="35.0" prefWidth="150.0" />
       <TextField fx:id="txtAuthor" layoutX="201.0" layoutY="227.0" prefHeight="35.0" prefWidth="150.0" />
-      <Button layoutX="455.0" layoutY="411.0" mnemonicParsing="false" onAction="#oKBtnOnAction" text="Ok" />
+      <Button layoutX="455.0" layoutY="411.0" mnemonicParsing="false" onAction="#oKBtnOnAction" prefHeight="37.0" prefWidth="71.0" style="-fx-background-color: #4F75FF;" text="Ok">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
       <TextField fx:id="txtBranchId" layoutX="201.0" layoutY="341.0" prefHeight="35.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

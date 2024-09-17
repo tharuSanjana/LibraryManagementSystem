@@ -12,14 +12,14 @@
 
 <AnchorPane fx:id="root" prefHeight="387.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.LoginFormController">
    <children>
-      <AnchorPane layoutX="-7.0" prefHeight="387.0" prefWidth="243.0" style="-fx-background-color: #392467;">
+      <AnchorPane layoutX="-7.0" prefHeight="387.0" prefWidth="243.0" style="-fx-background-color: #4F75FF;">
          <children>
-            <Label layoutX="37.0" layoutY="68.0" prefHeight="87.0" prefWidth="162.0" text="BOOK" textFill="#f4f0f0">
+            <Label layoutX="37.0" layoutY="68.0" prefHeight="87.0" prefWidth="162.0" text="BOOK" textFill="#2b2a2a">
                <font>
                   <Font name="System Bold" size="51.0" />
                </font>
             </Label>
-            <Label layoutX="37.0" layoutY="150.0" prefHeight="87.0" prefWidth="177.0" text="WORM" textFill="#f4f0f0">
+            <Label layoutX="37.0" layoutY="150.0" prefHeight="87.0" prefWidth="177.0" text="WORM" textFill="#2e2c2c">
                <font>
                   <Font name="System Bold" size="51.0" />
                </font>
@@ -42,7 +42,7 @@
          </font>
       </Label>
       <TextField fx:id="txtUsername" layoutX="378.0" layoutY="67.0" prefHeight="34.0" prefWidth="198.0" style="-fx-background-radius: 50;" />
-      <Button layoutX="312.0" layoutY="244.0" mnemonicParsing="false" onAction="#loginBtnOnAction" prefHeight="34.0" prefWidth="222.0" style="-fx-background-color: #A367B1; -fx-background-radius: 10;" text="Login">
+      <Button layoutX="312.0" layoutY="244.0" mnemonicParsing="false" onAction="#loginBtnOnAction" prefHeight="34.0" prefWidth="222.0" style="-fx-background-color: #4F75FF; -fx-background-radius: 10;" text="Login">
          <font>
             <Font size="21.0" />
          </font>

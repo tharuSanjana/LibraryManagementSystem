@@ -38,7 +38,7 @@
          </image>
       </ImageView>
       <Button layoutX="32.0" layoutY="35.0" mnemonicParsing="false" onAction="#backBtnOnAction" opacity="0.04" prefHeight="34.0" prefWidth="69.0" text="Button" />
-      <Button layoutX="1001.0" layoutY="626.0" mnemonicParsing="false" onAction="#updateBtnOnAction" text="Update" />
-      <Button layoutX="1081.0" layoutY="626.0" mnemonicParsing="false" onAction="#deleteBtnOnAction" text="Delete" />
+      <Button layoutX="1001.0" layoutY="626.0" mnemonicParsing="false" onAction="#updateBtnOnAction" prefHeight="34.0" prefWidth="70.0" style="-fx-background-color: #16FF00;" text="Update" />
+      <Button layoutX="1095.0" layoutY="626.0" mnemonicParsing="false" onAction="#deleteBtnOnAction" prefHeight="34.0" prefWidth="70.0" style="-fx-background-color: #f44336;" text="Delete" />
    </children>
 </AnchorPane>

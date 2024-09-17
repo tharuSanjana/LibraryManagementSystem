@@ -27,8 +27,8 @@
             <TableColumn fx:id="colBranch" prefWidth="136.00001525878906" text="Branch" />
          </columns>
       </TableView>
-      <TextField fx:id="txtSearchBook" layoutX="944.0" layoutY="35.0" prefHeight="34.0" prefWidth="214.0" />
-      <AnchorPane layoutX="815.0" layoutY="262.0" prefHeight="457.0" prefWidth="386.0" style="-fx-background-color: #5D3587; -fx-background-radius: 20;">
+      <TextField fx:id="txtSearchBook" layoutX="944.0" layoutY="35.0" prefHeight="34.0" prefWidth="214.0" style="-fx-border-color: #00CCDD;" />
+      <AnchorPane layoutX="815.0" layoutY="262.0" prefHeight="457.0" prefWidth="386.0" style="-fx-background-color: #4F75FF; -fx-background-radius: 20;">
          <children>
             <Label layoutX="98.0" layoutY="34.0" prefHeight="43.0" prefWidth="214.0" text="For Borrowing" textFill="#f2eaea">
                <font>
@@ -52,8 +52,8 @@
                </font>
             </Label>
             <TextField fx:id="txtBookName" layoutX="150.0" layoutY="257.0" prefHeight="33.0" prefWidth="150.0" />
-            <Button layoutX="84.0" layoutY="353.0" mnemonicParsing="false" onAction="#borrowBtnOnActon" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: #40A2E3;" text="Borrow" />
-            <Button layoutX="208.0" layoutY="353.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: #FFA447;" text="Cancel" />
+            <Button layoutX="84.0" layoutY="353.0" mnemonicParsing="false" onAction="#borrowBtnOnActon" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: #16FF00;" text="Borrow" />
+            <Button layoutX="208.0" layoutY="353.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: #f44336;" text="Cancel" />
             <Label layoutX="25.0" layoutY="144.0" prefHeight="43.0" prefWidth="94.0" text="User Name" textFill="#f2eaea">
                <font>
                   <Font name="System Bold" size="16.0" />
@@ -63,7 +63,7 @@
             <ComboBox fx:id="cmbBookId" layoutX="150.0" layoutY="203.0" onAction="#cmbBookIdOnAction" prefHeight="34.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
-      <Button layoutX="1165.0" layoutY="39.0" mnemonicParsing="false" onAction="#searchBtnOnAction" text="search" />
+      <Button layoutX="1165.0" layoutY="39.0" mnemonicParsing="false" onAction="#searchBtnOnAction" style="-fx-background-color: #00CCDD;" text="search" />
       <ImageView fitHeight="79.0" fitWidth="51.0" layoutX="42.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/arrowKey.png" />
