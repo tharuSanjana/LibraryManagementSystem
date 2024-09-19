@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="root" prefHeight="800.0" prefWidth="1238.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserProfileFormController">
    <children>
-      <ImageView fitHeight="164.0" fitWidth="166.0" layoutX="520.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="157.0" fitWidth="154.0" layoutX="520.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/user.png" />
          </image>

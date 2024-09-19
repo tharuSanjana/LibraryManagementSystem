@@ -20,17 +20,17 @@
                </font>
             </Button>
          </children></AnchorPane>
-      <Button fx:id="bookBtn" layoutX="-2.0" layoutY="319.0" mnemonicParsing="false" onAction="#booksBtnONAction" prefHeight="52.0" prefWidth="299.0" style="-fx-background-color: #4F75FF;" text="BOOKS" textFill="#f7f4f4">
+      <Button fx:id="bookBtn" layoutX="-2.0" layoutY="319.0" mnemonicParsing="false" onAction="#booksBtnONAction" prefHeight="52.0" prefWidth="366.0" style="-fx-background-color: #4F75FF;" text="BOOKS" textFill="#f7f4f4">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Button>
-      <Button fx:id="transactionBtn" layoutX="-4.0" layoutY="404.0" mnemonicParsing="false" onAction="#transBtnOnAction" prefHeight="52.0" prefWidth="360.0" style="-fx-background-color: #4F75FF;" text="TRANSACTION" textFill="#f7f4f4">
+      <Button fx:id="transactionBtn" layoutX="-4.0" layoutY="404.0" mnemonicParsing="false" onAction="#transBtnOnAction" prefHeight="52.0" prefWidth="366.0" style="-fx-background-color: #4F75FF;" text="TRANSACTION" textFill="#f7f4f4">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Button>
-      <Button layoutY="488.0" mnemonicParsing="false" onAction="#profileBtnOnAction" prefHeight="52.0" prefWidth="299.0" style="-fx-background-color: #4F75FF;" text="PROFILE" textFill="#f7f4f4">
+      <Button fx:id="profileBtn" layoutY="488.0" mnemonicParsing="false" onAction="#profileBtnOnAction" prefHeight="52.0" prefWidth="360.0" style="-fx-background-color: #4F75FF;" text="PROFILE" textFill="#f7f4f4">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>

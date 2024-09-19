@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.net.URL;
 
 public class UserDashboardFormController {
+    @FXML
+    private Button profileBtn;
 
     @FXML
     private Button bookBtn;
@@ -37,6 +39,8 @@ public class UserDashboardFormController {
         rootForm.getChildren().clear();
         rootForm.getChildren().add(parent);
 */
+        resetButtonStyles();
+        ((Button) event.getSource()).setStyle("-fx-background-color: #00CCDD;");
         Parent root=FXMLLoader.load(this.getClass().getResource("/view/userBookForm.fxml"));
         this.rootForm.getChildren().clear();
         this.rootForm.getChildren().add(root);
@@ -46,6 +50,8 @@ public class UserDashboardFormController {
 
     @FXML
     void transBtnOnAction(ActionEvent event) throws IOException {
+        resetButtonStyles();
+        ((Button) event.getSource()).setStyle("-fx-background-color: #00CCDD;");
         Parent root=FXMLLoader.load(this.getClass().getResource("/view/userTransactionForm.fxml"));
         this.rootForm.getChildren().clear();
         this.rootForm.getChildren().add(root);
@@ -53,6 +59,8 @@ public class UserDashboardFormController {
 
     @FXML
     void profileBtnOnAction(ActionEvent event) throws IOException {
+        resetButtonStyles();
+        ((Button) event.getSource()).setStyle("-fx-background-color: #00CCDD;");
         Parent root=FXMLLoader.load(this.getClass().getResource("/view/userProfileForm.fxml"));
         this.rootForm.getChildren().clear();
         this.rootForm.getChildren().add(root);
@@ -80,6 +88,13 @@ public class UserDashboardFormController {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setResizable(false);
         stage.show();
+
+    }
+    private void resetButtonStyles() {
+        // Reset all buttons' background color to blue
+        bookBtn.setStyle("-fx-background-color:  #4F75FF;");
+        transactionBtn.setStyle("-fx-background-color:  #4F75FF;");
+        profileBtn.setStyle("-fx-background-color:  #4F75FF;");
 
     }
 }

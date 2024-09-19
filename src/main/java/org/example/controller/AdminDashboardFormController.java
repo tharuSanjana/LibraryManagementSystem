@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -18,9 +19,28 @@ public class AdminDashboardFormController {
     @FXML
     private AnchorPane rootAdmin;
 
+    @FXML
+    private Button adminBookBtn;
+
+    @FXML
+    private Button adminBranchBtn;
+
+    @FXML
+    private Button adminDetailBtn;
+
+
+    @FXML
+    private Button adminTransactionBtn;
+
+
+    @FXML
+    private Button userDetailBookBtn;
+
 
     @FXML
     void adminDetailsBtnOnAction(ActionEvent event) throws IOException {
+        resetButtonStyles();
+        ((Button) event.getSource()).setStyle("-fx-background-color: #00CCDD;");
         Parent root= FXMLLoader.load(this.getClass().getResource("/view/adminViewAdminForm.fxml"));
         this.adminRootForm.getChildren().clear();
         this.adminRootForm.getChildren().add(root);
@@ -28,6 +48,8 @@ public class AdminDashboardFormController {
 
     @FXML
     void booksBtnOnAction(ActionEvent event) throws IOException {
+        resetButtonStyles();
+        ((Button) event.getSource()).setStyle("-fx-background-color: #00CCDD;");
         Parent root= FXMLLoader.load(this.getClass().getResource("/view/adminBookForm.fxml"));
         this.adminRootForm.getChildren().clear();
         this.adminRootForm.getChildren().add(root);
@@ -35,6 +57,8 @@ public class AdminDashboardFormController {
 
     @FXML
     void branchesBtnOnAction(ActionEvent event) throws IOException {
+        resetButtonStyles();
+        ((Button) event.getSource()).setStyle("-fx-background-color: #00CCDD;");
         Parent root= FXMLLoader.load(this.getClass().getResource("/view/adminBranchesForm.fxml"));
         this.adminRootForm.getChildren().clear();
         this.adminRootForm.getChildren().add(root);
@@ -42,6 +66,8 @@ public class AdminDashboardFormController {
 
     @FXML
     void transactionBtnOnAction(ActionEvent event) throws IOException {
+        resetButtonStyles();
+        ((Button) event.getSource()).setStyle("-fx-background-color: #00CCDD;");
         Parent root= FXMLLoader.load(this.getClass().getResource("/view/adminTransactionForm.fxml"));
         this.adminRootForm.getChildren().clear();
         this.adminRootForm.getChildren().add(root);
@@ -49,6 +75,8 @@ public class AdminDashboardFormController {
 
     @FXML
     void userDetailsBtnOnAction(ActionEvent event) throws IOException {
+        resetButtonStyles();
+        ((Button) event.getSource()).setStyle("-fx-background-color: #00CCDD;");
         Parent root= FXMLLoader.load(this.getClass().getResource("/view/adminViewUsersForm.fxml"));
         this.adminRootForm.getChildren().clear();
         this.adminRootForm.getChildren().add(root);
@@ -76,5 +104,15 @@ public class AdminDashboardFormController {
         stage.setScene(scene);
         stage.setTitle("Dashboard");
         stage.centerOnScreen();
+    }
+
+    private void resetButtonStyles() {
+        // Reset all buttons' background color to blue
+        adminBookBtn.setStyle("-fx-background-color:  #4F75FF;");
+        adminBranchBtn.setStyle("-fx-background-color:  #4F75FF;");
+        adminDetailBtn.setStyle("-fx-background-color:  #4F75FF;");
+        adminTransactionBtn.setStyle("-fx-background-color:  #4F75FF;");
+        userDetailBookBtn.setStyle("-fx-background-color:  #4F75FF;");
+
     }
 }
