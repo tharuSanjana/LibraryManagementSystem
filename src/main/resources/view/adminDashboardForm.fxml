@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="rootAdmin" prefHeight="800.0" prefWidth="1540.0" style="-fx-background-color: #4F75FF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.AdminDashboardFormController">
@@ -52,6 +56,101 @@
                </image>
             </ImageView>
             <Button layoutX="966.0" layoutY="83.0" mnemonicParsing="false" onAction="#addUsersBtnOnAction" opacity="0.0" prefHeight="70.0" prefWidth="71.0" text="Button" />
+            <GridPane layoutX="104.0" layoutY="226.0" prefHeight="512.0" prefWidth="1078.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="486.4000244140625" minWidth="10.0" prefWidth="227.2" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="615.199951171875" minWidth="0.0" prefWidth="0.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="692.2000732421876" minWidth="10.0" prefWidth="223.00001220703126" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="692.2000732421876" minWidth="0.0" prefWidth="199.19999999999993" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="692.2000732421876" minWidth="10.0" prefWidth="208.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="692.2000732421876" minWidth="10.0" prefWidth="223.6000732421876" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="170.40000610351564" minHeight="10.0" prefHeight="170.40000610351564" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="284.8000427246094" minHeight="10.0" prefHeight="161.7999938964844" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="298.79999389648435" minHeight="10.0" prefHeight="114.80002441406248" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/harryPortter.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@../images/harryPortter.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                     <image>
+                        <Image url="@../images/harryPortter.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                     <image>
+                        <Image url="@../images/harryPortter.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+                     <image>
+                        <Image url="@../images/harryPortter.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../images/gagaaddrakale.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../images/gagaaddrakale.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../images/gagaaddrakale.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../images/gagaaddrakale.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../images/gagaaddrakale.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../images/goodGirl.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../images/goodGirl.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../images/goodGirl.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="461.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../images/goodGirl.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="660.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../images/goodGirl.jpeg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </GridPane>
          </children></AnchorPane>
    </children>
 </AnchorPane>
