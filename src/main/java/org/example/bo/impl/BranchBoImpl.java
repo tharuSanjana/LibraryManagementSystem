@@ -29,7 +29,7 @@ public class BranchBoImpl implements BranchBo {
     BookDao bookDao = (BookDao) DAOFactory.daoFactory().getDAOTypes(DAOFactory.DAOTypes.BOOK);
     @Override
     public boolean saveBranch(BranchDto dto) {
-
+        System.out.println(dto.getLocation());
         return branchDao.saveBranch(new Branch(dto.getId(),dto.getLocation()));
     }
 
@@ -58,6 +58,8 @@ public class BranchBoImpl implements BranchBo {
     public boolean updateBranch(BranchDto dto) {
         return branchDao.updateBranch(new Branch(dto.getId(),dto.getLocation()));
     }
+
+
 
   /*  @Override
     public boolean deleteBranch(BranchDto dto) {
